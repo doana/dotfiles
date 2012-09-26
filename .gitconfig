@@ -6,4 +6,5 @@
         email = doana@uoguelph.ca
 [core]
         editor = vim
-
+[alias]
+	tree = log --oneline --graph --decorate --all

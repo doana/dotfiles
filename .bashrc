@@ -73,6 +73,7 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
+    alias la="ls -la --color=auto"
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -85,6 +86,9 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias errorlog="sudo tail -f /var/log/httpd/error_log"
+alias accesslog="sudo tail -f /var/log/httpd/access_log"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -106,3 +110,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+export TERM=linux
