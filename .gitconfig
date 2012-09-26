@@ -1,4 +1,9 @@
-[core]
-	editor = vim
 [color]
-	ui = true
+        diff = true
+        ui = true
+[user]
+        name = Adam Doan
+        email = doana@uoguelph.ca
+[core]
+        editor = vim
+
