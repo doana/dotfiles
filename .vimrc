@@ -8,6 +8,8 @@ nmap <esc>OF $
 imap <esc>OF <esc>$a
 cmap <esc>OF <end>
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
+
+:syntax on
