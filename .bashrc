@@ -90,6 +90,8 @@ alias l='ls -CF'
 alias errorlog="sudo tail -f /var/log/httpd/error_log"
 alias accesslog="sudo tail -f /var/log/httpd/access_log"
 
+alias fixperm="sudo chown -R apache:developers . && sudo chmod -R g+rw ."
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -112,4 +114,4 @@ fi
 
 export TERM=linux
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.config/composer/vendor/bin # Add RVM to PATH for scripting
