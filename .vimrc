@@ -91,6 +91,8 @@ set nocompatible
     " REQUIREMENTS: See :h syntastic-intro
     Bundle 'scrooloose/syntastic'
 
+    Plugin 'joonty/vdebug'
+
     " Functions, class data etc.
     " REQUIREMENTS: (exuberant)-ctags
     "Bundle 'majutsushi/tagbar'
@@ -230,6 +232,8 @@ set nocompatible
     set nrformats+=alpha                            " incr/decr letters C-a/-x
     set shiftround                                  " be clever with tabs
     set shiftwidth=4                                " default 8
+    set ts=4
+    set expandtab
     set smartcase                                   " sensitive with uppercase
     set smarttab                                    " tab to 0,4,8 etc.
     set softtabstop=4                               " "tab" feels like <tab>
@@ -576,3 +580,12 @@ set nocompatible
 
     " Open Nerdtree automatically if no files are specified.
     autocmd vimenter * if !argc() | NERDTree | endif
+
+    let g:vdebug_options = {}
+    let g:vdebug_options["port"] = 9001
+
+    map <C-v> :VdebugStart<CR>
+    map <C-b> :Breakpoint<CR>
+    noremap <C-j> :python debugger.step_over()<CR>
+    noremap <C-k> :python debugger.step_into()<CR>
+    noremap <C-l> :python debugger.step_out()<CR>
